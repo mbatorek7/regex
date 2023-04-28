@@ -24,6 +24,7 @@ Within this tutorial, I will go through different components of regular expressi
     - [Back-references](#back-references)
     - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
   - [License](#license)
+  - [Author](#author)
   - [Questions?](#questions)
 
 ## Regex Components
@@ -141,6 +142,9 @@ This line of code asserts that what immediately precedes the current position in
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Author
+Maegan Batorek is Computer Science and Engineering graduate from Valparaiso University.
 
 ## Questions?
 - Github Profile: [https://github.com/mbatorek7](https://github.com/mbatorek7)
