@@ -4,7 +4,7 @@ A regular expression, commonly referred to as regex or regexp, is a sequence of 
 
 ## Summary
 
-Within this tutorial, I will go through regular expressions that are used in web development and how they are written in order to be used to find patterns in strings.
+Within this tutorial, I will go through different components of regular expressions that are used in web development and how they are written in order to be used to find patterns in strings.
 
 ## Table of Contents
 
@@ -32,23 +32,31 @@ Within this tutorial, I will go through regular expressions that are used in web
 
 There are a few different types of anchors that you can use. There is ^, $, and \b. The ^ anchor matches the beginning of a line. The $ anchor matches the end of a line. The \b anchor matches a word boundary. Additionally, \d would match any digit and \w would match any alphanumeric character.
 
-<mark>console.log(/^J/.test(str));</mark>
+```
+console.log(/^J/.test(str));
+```
 
 This piece of code would match any text that starts with the letter J because of the /^J/.
 
-<mark>console.log(/t$/.test(str));</mark>
+```
+console.log(/t$/.test(str));
+```
 
 This piece of code would match any text that ends with the letter t.
 
 Altogether, if we wanted to create a regular expression that would return all strings that contain the word cat, then our expression would look like this:
 
-<mark>\w+cat\w+</mark>
+```
+\w+cat\w+
+```
 
 ### Quantifiers
 
 Quantifiers allow you to specify how many characters or how many of a character class should be matched. By default, quantifiers are greedy, and will match as many characters as possible.
 
-<mark>let pattern = /lo*/g;</mark>
+```
+let pattern = /lo*/g;
+```
 
 This piece of code would allow the user to search for the letter l, followed by zero or more o characters.
 
@@ -56,15 +64,20 @@ Another type of quantifier is +, which allows you to match 1 or more times. And 
 
 ### OR Operator
 
-The OR operator within a regular expression is used by the | element. This expression returns either compenent that is seperated by the |. For example, abc|xyz would return either abc or xyz. This element can be used multiple times as well in the same expression. For example, <mark> abc | xyz | tuv </mark> would be a valid expression.
+The OR operator within a regular expression is used by the | element. This expression returns either compenent that is seperated by the |. For example, abc|xyz would return either abc or xyz. This element can be used multiple times as well in the same expression. For example, 
+
+``` 
+abc | xyz | tuv 
+```
+would be a valid expression.
 
 ### Character Classes
 
-With a character class or a character set, you can use regex to match only one out of several characters. For example, you can use this in gr[ae]y, which will match an a or e for a return of either gray or grey. However, this does not match graay, graey or any such thing. The order of the characters inside a character class does not matter. The results are identical. You can also use a hyphen inside to specify a range of characters. For example, [0-9] will match a single digit between 0 and 9.
+With a character class or a character set, you can use regex to match only one out of several characters. For example, you can use this in gr[ae]y, which will match an a or e for a return of either gray or grey. However, this does not match graay, graey or anything else. The order of the characters inside a character class does not matter. The results are identical. You can also use a hyphen inside to specify a range of characters. For example, [0-9] will match a single digit between 0 and 9.
 
 ### Flags
 
-Regex expressions may have flags that affect the search. These flags allow you to change how the regex behaves, such as making it case-insensitive or allowing it to match on multiple lines. There are only 6 of them in JavaScript. There is i, g, m, s, u, and y. 
+Regex expressions may have flags that affect the search. These flags allow you to change how the regex behaves, such as making it case-insensitive or allowing it to match on multiple lines. There are only 6 of them in JavaScript. The various flags are i, g, m, s, u, and y. 
 
 The i flag can be used in a search that is case-insensitive. Meaning that there is no difference between A and a.
 
@@ -102,19 +115,27 @@ Back-references match the same text as previously matched by capturing a group. 
 
 Look-ahead and look-behind, collectively called “lookaround”, are zero-length assertions just like the start and end of line, and start and end of word anchors. The difference is that lookaround actually matches characters, but then gives up the match. Meaning it returns only the result match or no match. They don't consume characters in the string, but only assert whether a match is possible or not.
 
-<mark>(?=foo)</mark>
+```
+(?=foo)
+```
 
 This line of code asserts that what immediately follows the current position in the string is foo.
 
-<mark>(?<=foo)</mark>
+```
+(?<=foo)
+```
 
 This line of code asserts that what immediately precedes the current position in the string is foo.
 
-<mark>(?!foo)</mark>
+```
+(?!foo)
+```
 
 This line of code asserts that what immediately follows the current position in the string is not foo.
 
-<mark>(?<!foo)</mark>
+```
+(?<!foo)
+```
 
 This line of code asserts that what immediately precedes the current position in the string is not foo.
 
